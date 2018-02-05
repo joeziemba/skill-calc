@@ -1,4 +1,11 @@
 class Character < ApplicationRecord
+  # ASSOCIATIONS
+  has_many :character_skills
+  has_many :skills, through: :character_skills
+
+  # VALIDATIONS
+
+  # CLASS METHODS
   def bonus(score)
     if 4 <= score && score < 6
       return -3
